@@ -119,6 +119,50 @@ const otherWorks = [
   ],
 ];
 
+const socialContent = [
+  {
+    period: "2023 - 2025",
+    title: "FANPAGE BÁO CHÍ TRẺ",
+    role: "Quản trị page - Content creator - Biên tập viên",
+    bullets: [
+      "Lên ý tưởng và triển khai nội dung sáng tạo trên Facebook.",
+      "Viết bài, sản xuất nội dung truyền thông (bài đăng, hình ảnh, video) nhằm tăng tương tác và thu hút người xem.",
+      "Tham gia cùng đội ngũ thiết kế và media để phát triển nội dung trực quan hấp dẫn.",
+      "Nghiên cứu xu hướng, hành vi người dùng để cập nhật chiến lược nội dung phù hợp với thị trường.",
+    ],
+    summary:
+      "Tại đây, tôi đã tích lũy được tư duy nội dung trong môi trường số, độ nhạy với thị hiếu độc giả và khả năng phát triển câu chuyện báo chí thành những định dạng phù hợp với mạng xã hội.",
+    image: "/section2.jpg",
+  },
+  {
+    period: "4/2025 - 8/2025",
+    title: "Công ty Cổ phần Công nghệ Chatbot Việt Nam",
+    role: "Content marketing",
+    bullets: [
+      "Quản lý và phát triển nội dung cho Fanpage, Tiktok theo yêu cầu khách hàng.",
+      "Lên ý tưởng và triển khai nội dung sáng tạo trên Facebook, Tiktok, Instagram.",
+      "Sáng tạo nội dung PR, viral trên Facebook nhằm tăng nhận diện thương hiệu và thu hút người dùng/người xem.",
+    ],
+    summary:
+      "Tại đây, tôi cũng có được tư duy marketing và khả năng cân bằng giữa yếu tố sáng tạo, nhu cầu người dùng và mục tiêu truyền thông trong quá trình phát triển nội dung.",
+    image: "/section3.jpg",
+  },
+  {
+    period: "4/2026 - 7/2026",
+    title: "Công ty TNHH VIC Ecommerce",
+    role: "Digital Marketing - Quản trị Page và Group",
+    bullets: [
+      "Lên ý tưởng và triển khai nội dung sáng tạo trên Facebook, Tiktok, Instagram.",
+      "Viết bài, sản xuất nội dung truyền thông (bài đăng, hình ảnh, video) nhằm tăng tương tác và thu hút khách hàng mục tiêu.",
+      "Lên kế hoạch và sáng tạo nội dung hàng ngày theo định hướng thương hiệu.",
+      "Theo dõi hiệu quả nội dung qua các chỉ số như lượt xem, tương tác, tỷ lệ chuyển đổi, v.vv.. và đưa ra các đề xuất cải thiện.",
+    ],
+    summary:
+      "Tại đây, tôi đã có được khả năng vận hành nội dung đa nền tảng, tư duy tối ưu nội dung theo hiệu quả và sự linh hoạt trong việc thích ứng với nhu cầu thực tế của doanh nghiệp.",
+    image: "/section1.jpg",
+  },
+];
+
 const skills = [
   ["Viết & biên tập", "Viết tin, bài báo chí · Phỏng vấn · Thu thập và xử lý thông tin · Biên tập nội dung"],
   ["Đa phương tiện", "Chụp ảnh · Quay – dựng video cơ bản · Longform · Kể chuyện bằng hình ảnh"],
@@ -226,10 +270,11 @@ function App() {
           <li><button type="button" onClick={() => scrollTo("work")}>01 — SẢN PHẨM TIÊU BIỂU</button></li>
           <li><button type="button" onClick={() => scrollTo("press")}>02 — BÁO CHÍ</button></li>
           <li><button type="button" onClick={() => scrollTo("portraits")}>03 — CHÂN DUNG &amp; PHỎNG VẤN</button></li>
-          <li><button type="button" onClick={() => scrollTo("other-works")}>04 — MỘT SỐ SẢN PHẨM KHÁC</button></li>
-          <li><button type="button" onClick={() => scrollTo("experience")}>05 — KINH NGHIỆM</button></li>
-          <li><button type="button" onClick={() => scrollTo("skills")}>06 — KỸ NĂNG</button></li>
-          <li><button type="button" onClick={() => scrollTo("contact")}>07 — LIÊN HỆ</button></li>
+          <li><button type="button" onClick={() => scrollTo("social-content")}>04 — SOCIAL CONTENT / MARKETING</button></li>
+          <li><button type="button" onClick={() => scrollTo("other-works")}>05 — MỘT SỐ SẢN PHẨM KHÁC</button></li>
+          <li><button type="button" onClick={() => scrollTo("experience")}>06 — KINH NGHIỆM</button></li>
+          <li><button type="button" onClick={() => scrollTo("skills")}>07 — KỸ NĂNG</button></li>
+          <li><button type="button" onClick={() => scrollTo("contact")}>08 — LIÊN HỆ</button></li>
         </ol>
       </section>
 
@@ -287,6 +332,41 @@ function App() {
               <h3>{title}</h3>
               <p>{description}</p>
               <ReadButton dark href={link} />
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-block social-content-section" id="social-content">
+        <div className="section-title" data-aos="fade-up">
+          <h2>SOCIAL CONTENT / MARKETING</h2>
+          <span className="title-line" />
+        </div>
+        <div className="social-timeline">
+          {socialContent.map((entry, index) => (
+            <article className="social-entry" key={entry.title} data-aos="fade-up" data-aos-delay={(index % 3) * 100}>
+              <div className="social-image-col">
+                {entry.image ? (
+                  <div className="social-image" style={{ backgroundImage: `url(${entry.image})` }} />
+                ) : (
+                  <div className="social-image social-image-placeholder">
+                    <span>{entry.title.charAt(0)}</span>
+                  </div>
+                )}
+              </div>
+              <div className="social-content-col">
+                <span className="social-period">{entry.period}</span>
+                <h3>{entry.title}</h3>
+                <p className="social-role">Vị trí đảm nhận: {entry.role}</p>
+                <ul className="social-bullets">
+                  {entry.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+                <div className="social-summary-box">
+                  <p>{entry.summary}</p>
+                </div>
+              </div>
             </article>
           ))}
         </div>
